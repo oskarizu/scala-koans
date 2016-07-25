@@ -1,0 +1,546 @@
+[0m[[0minfo[0m] [0m[32mKoans:[0m[0m
+[0m[[0minfo[0m] [0m[32mAboutAsserts:[0m[0m
+[0m[[0minfo[0m] [0m[32m- asserts can take a boolean argument[0m[0m
+[0m[[0minfo[0m] [0m[32m- asserts can include a message[0m[0m
+[0m[[0minfo[0m] [0m[32m- true and false values can be compared with should matchers[0m[0m
+[0m[[0minfo[0m] [0m[32m- booleans in asserts can test equality[0m[0m
+[0m[[0minfo[0m] [0m[32m- sometimes we expect you to fill in the values[0m[0m
+[0m[[0minfo[0m] [0m[32mAboutValAndVar:[0m[0m
+[0m[[0minfo[0m] [0m[32m- Vars are variables, and may be reassigned[0m[0m
+[0m[[0minfo[0m] [0m[32m- vals are values, and may not be reassigned, analogous to final in Java[0m[0m
+[0m[[0minfo[0m] [0m[32m- All vals and var types are inferred by default, but you can add the type explicitly[0m[0m
+[0m[[0minfo[0m] [0m[32m- If you want to include a space in your variable or value use backticks[0m[0m
+[0m[[0minfo[0m] [0m[32m- Any strange characters that you wish to use in a variable or value can be used after an underscore[0m[0m
+[0m[[0minfo[0m] [0m[32m- Backticks can also be used to spite your co-workers and send them into a spiral of confusion and agony![0m[0m
+[0m[[0minfo[0m] [0m[32m- A lazy val is assignment that will not evaluated until it is called. Note there is no lazy var[0m[0m
+[0m[[0minfo[0m] [0m[32mAboutLiteralBooleans:[0m[0m
+[0m[[0minfo[0m] [0m[32m- Boolean literals are either true or false, using the true or false keyword[0m[0m
+[0m[[0minfo[0m] [0m[32mAboutLiteralNumbers:[0m[0m
+[0m[[0minfo[0m] [0m[32m- Integer Literals are 32-bit and can be created from decimal, hexadecimal[0m[0m
+[0m[[0minfo[0m] [0m[32m- Long Literals are 64 bit, are specified by appending an L or l at the end;[0m[0m
+[0m[[0minfo[0m] [0m[32m   l is rarely used since it looks like a 1[0m[0m
+[0m[[0minfo[0m] [0m[32m- Float and Double Literals are IEEE 754 for specific,[0m[0m
+[0m[[0minfo[0m] [0m[32m   Float are 32-bit length, Doubles are 64-bit.[0m[0m
+[0m[[0minfo[0m] [0m[32m   Floats can be coerced using a f or F suffix, and[0m[0m
+[0m[[0minfo[0m] [0m[32m   Doubles can be coerced using a d or D suffix.[0m[0m
+[0m[[0minfo[0m] [0m[32m   Exponent are specified using e or E.[0m[0m
+[0m[[0minfo[0m] [0m[32mAboutLiteralStrings:[0m[0m
+[0m[[0minfo[0m] [0m[32m- Character Literals are quoted with single quotes[0m[0m
+[0m[[0minfo[0m] [0m[32m- Character Literals can use hexadecimal Unicode[0m[0m
+[0m[[0minfo[0m] [0m[32m- Character Literals can use octal as well[0m[0m
+[0m[[0minfo[0m] [0m[32m- Character Literals can use escape sequences[0m[0m
+[0m[[0minfo[0m] [0m[32m- One-Line String Literals are surrounded by quotation marks.[0m[0m
+[0m[[0minfo[0m] [0m[32m- String Literals can contain escape sequences.[0m[0m
+[0m[[0minfo[0m] [0m[32m- Multiline String literals[0m[0m
+[0m[[0minfo[0m] [0m[32m	are surrounded[0m[0m
+[0m[[0minfo[0m] [0m[32m	by three quotation marks[0m[0m
+[0m[[0minfo[0m] [0m[32m- Use stripMargin to prettify multi-line strings[0m[0m
+[0m[[0minfo[0m] [0m[32mAboutMethods:[0m[0m
+[0m[[0minfo[0m] [0m[32m- A method's last statement will be what is returned[0m[0m
+[0m[[0minfo[0m] [0m[32m There is no need for the keyword `return`.[0m[0m
+[0m[[0minfo[0m] [0m[32m When a method includes a `=` after the method declaration that[0m[0m
+[0m[[0minfo[0m] [0m[32m will infer the return type[0m[0m
+[0m[[0minfo[0m] [0m[32m- If you want to include the return type explicitly,[0m[0m
+[0m[[0minfo[0m] [0m[32m no one will stop you[0m[0m
+[0m[[0minfo[0m] [0m[32m- If a method returns two different types and no explicit[0m[0m
+[0m[[0minfo[0m] [0m[32m return type is defined,[0m[0m
+[0m[[0minfo[0m] [0m[32m the type of the method will likely be inferred as the[0m[0m
+[0m[[0minfo[0m] [0m[32m common super parent of the two types being returned[0m[0m
+[0m[[0minfo[0m] [0m[32m- If a method does not of have equal it is considered `Unit` which is analogous to `void` in Java[0m[0m
+[0m[[0minfo[0m] [0m[32m- If you want to have an = on the method, while still explicitly returning Unit you can make the return type `Unit`,[0m[0m
+[0m[[0minfo[0m] [0m[32m this also analogous to `void[0m[0m
+[0m[[0minfo[0m] [0m[32m- Once you have an =, it is understood that there will be a return type and can be inferred[0m[0m
+[0m[[0minfo[0m] [0m[32m- Of course if you wish to be explicit about the return type, you can attach it at the end of the method[0m[0m
+[0m[[0minfo[0m] [0m[32m- When performing recursion, the[0m[0m
+[0m[[0minfo[0m] [0m[32mreturn type on the method is mandatory![0m[0m
+[0m[[0minfo[0m] [0m[32m- If you want to ensure a method is not only recursive but _tail recursive_,[0m[0m
+[0m[[0minfo[0m] [0m[32m you can get help from the scala compiler to ensure that it is indeed a[0m[0m
+[0m[[0minfo[0m] [0m[32m tail recursive call by[0m[0m
+[0m[[0minfo[0m] [0m[32m including scala.annotation.tailrec on the method.  When methods are properly tail recursive. The [0m[0m
+[0m[[0minfo[0m] [0m[32m Scala compiler will optimize the code from stack recursion into a loop at compile time[0m[0m
+[0m[[0minfo[0m] [0m[32m- In scala, methods can be placed inside in methods! This comes useful for[0m[0m
+[0m[[0minfo[0m] [0m[32m recursion where accumulator helper methods can be placed inside the outer[0m[0m
+[0m[[0minfo[0m] [0m[32m  method, or you just want to place one method in another for design reasons[0m[0m
+[0m[[0minfo[0m] [0m[32m- Remember you can have strange characters in values and variables as long as they're[0m[0m
+[0m[[0minfo[0m] [0m[32m  after an underscore, well you can do the same in methods[0m[0m
+[0m[[0minfo[0m] [0m[32m- If you also remember you can add reserved words or words with space to any value or variable?[0m[0m
+[0m[[0minfo[0m] [0m[32m Same applies for methods. Although please note that this is uncommon unless you really are into[0m[0m
+[0m[[0minfo[0m] [0m[32m internal DSLs[0m[0m
+[0m[[0minfo[0m] [0m[32m- Convention (not required for the compiler) states that if you a call a method that[0m[0m
+[0m[[0minfo[0m] [0m[32mreturns a Unit, invoke that method with empty parenthesis, other leave the parenthesis out[0m[0m
+[0m[[0minfo[0m] [0m[32m- Methods with colons are right-associative, that means the object that a method is on will be on[0m[0m
+[0m[[0minfo[0m] [0m[32mthe _right_ and the method parameter will be on the _left_[0m[0m
+[0m[[0minfo[0m] [0m[32mAboutClasses:[0m[0m
+[0m[[0minfo[0m] [0m[32m- val parameters in class definition define getter[0m[0m
+[0m[[0minfo[0m] [0m[32m- var parameters in class definition define getter and setter[0m[0m
+[0m[[0minfo[0m] [0m[32m- fields defined internally are private to class[0m[0m
+[0m[[0minfo[0m] [0m[32mAboutUniformAccessPrinciple:[0m[0m
+[0m[[0minfo[0m] [0m[32m- Can access age as parameterless method[0m[0m
+[0m[[0minfo[0m] [0m[32m- Can access age as property[0m[0m
+[0m[[0minfo[0m] [0m[32m- Cannot add parameter to Method invocation[0m[0m
+[0m[[0minfo[0m] [0m[32m- What happens when I update current year using property[0m[0m
+[0m[[0minfo[0m] [0m[32m- What happens when I update current year using method[0m[0m
+[0m[[0minfo[0m] [0m[32mAboutConstructors:[0m[0m
+[0m[[0minfo[0m] [0m[32m- Primary constructor specified with a parameter requires that parameter to be passed in[0m[0m
+[0m[[0minfo[0m] [0m[32m- Class with no class parameters is called with no arguments[0m[0m
+[0m[[0minfo[0m] [0m[32mAboutParentClasses:[0m[0m
+[0m[[0minfo[0m] [0m[32m- Class hierarchy is linear, a class can only extend from one parent class[0m[0m
+[0m[[0minfo[0m] [0m[32m- A class that extends from another is polymorphic[0m[0m
+[0m[[0minfo[0m] [0m[32m- An abstract class, as in Java, cannot be instantiated and only inherited[0m[0m
+[0m[[0minfo[0m] [0m[32m- A class can be placed inside an abstract class just like in java[0m[0m
+[0m[[0minfo[0m] [0m[32mAboutOptions:[0m[0m
+[0m[[0minfo[0m] [0m[32m- Option can have one of two values - Some or None[0m[0m
+[0m[[0minfo[0m] [0m[32m- Represent null with None because null is a bad idea[0m[0m
+[0m[[0minfo[0m] [0m[32m- Provide a default value for None[0m[0m
+[0m[[0minfo[0m] [0m[32m- checking whether option has value[0m[0m
+[0m[[0minfo[0m] [0m[32m- Option can also be used with pattern matching[0m[0m
+[0m[[0minfo[0m] [0m[32mAboutObjects:[0m[0m
+[0m[[0minfo[0m] [0m[32m- An object is a singleton. One object -- that's it. This object is a replacement of static in Java,[0m[0m
+[0m[[0minfo[0m] [0m[32m and is called upon much in the same way[0m[0m
+[0m[[0minfo[0m] [0m[32m- Here is proof an object is a singleton, and not a static method in a class[0m[0m
+[0m[[0minfo[0m] [0m[32m- An object that has the same name as class is called a companion object,[0m[0m
+[0m[[0minfo[0m] [0m[32m it is used to contain factories for the class that it complements[0m[0m
+[0m[[0minfo[0m] [0m[32m- A companion object stores shared variables and values for every instantiated class to share.[0m[0m
+[0m[[0minfo[0m] [0m[32m (See SecretAgent class and companion object above).[0m[0m
+[0m[[0minfo[0m] [0m[32m- A companion object can also see private values and variables of the instantiated objects[0m[0m
+[0m[[0minfo[0m] [0m[32mAboutApply:[0m[0m
+[0m[[0minfo[0m] [0m[32m- The apply method is a magical method in Scala, it is a method that doesn't require you[0m[0m
+[0m[[0minfo[0m] [0m[32mto leave out the entire method name![0m[0m
+[0m[[0minfo[0m] [0m[32m- The apply method can also be used in singleton objects as well, in fact, it is the most common way[0m[0m
+[0m[[0minfo[0m] [0m[32m          to create a factory method in an object[0m[0m
+[0m[[0minfo[0m] [0m[32mAboutTuples:[0m[0m
+[0m[[0minfo[0m] [0m[32m- Tuples can be created easily[0m[0m
+[0m[[0minfo[0m] [0m[32m- Tuple items may be accessed individually[0m[0m
+[0m[[0minfo[0m] [0m[32m- Tuples may be of mixed type[0m[0m
+[0m[[0minfo[0m] [0m[32m- Tuples items can be swapped on a Tuple 2[0m[0m
+[0m[[0minfo[0m] [0m[32mAboutHigherOrderFunctions:[0m[0m
+[0m[[0minfo[0m] [0m[32m- Meet lambda. Anonymous function[0m[0m
+[0m[[0minfo[0m] [0m[32m- An anonymous function can also take on a different look by taking out the brackets[0m[0m
+[0m[[0minfo[0m] [0m[32m- Meet closure. Closure is any function that closes over the environment[0m[0m
+[0m[[0minfo[0m] [0m[32m- We can take that closure and throw into a method and it will still hold the environment[0m[0m
+[0m[[0minfo[0m] [0m[32m- function returning another function[0m[0m
+[0m[[0minfo[0m] [0m[32m- function returning another function using an anonymous function[0m[0m
+[0m[[0minfo[0m] [0m[32m- isInstanceOf is the same as instanceof in java, but in this case the parameter types can be[0m[0m
+[0m[[0minfo[0m] [0m[32m 'blanked out' using existential types with is a single underline, since parameter type are unknown[0m[0m
+[0m[[0minfo[0m] [0m[32m at runtime.[0m[0m
+[0m[[0minfo[0m] [0m[32m- function taking another function as parameter. Helps in composing functions.[0m[0m
+[0m[[0minfo[0m] [0m[32m Hint: a map method applies the function to each element of a list[0m[0m
+[0m[[0minfo[0m] [0m[32m- Currying is a technique to transform function with multiple parameters to function with one parameter[0m[0m
+[0m[[0minfo[0m] [0m[32m- Currying allows you to create specialized version of generalized function[0m[0m
+[0m[[0minfo[0m] [0m[32mAboutEmptyValues:[0m[0m
+[0m[[0minfo[0m] [0m[32m- None equals None[0m[0m
+[0m[[0minfo[0m] [0m[32m- None should be identical to None[0m[0m
+[0m[[0minfo[0m] [0m[32m- None can be converted to a String[0m[0m
+[0m[[0minfo[0m] [0m[32m- An empty list can be represented by another nothing value: Nil[0m[0m
+[0m[[0minfo[0m] [0m[32m- None can be converted to an empty list[0m[0m
+[0m[[0minfo[0m] [0m[32m- None is considered empty[0m[0m
+[0m[[0minfo[0m] [0m[32m- None can be cast Any, AnyRef or AnyVal[0m[0m
+[0m[[0minfo[0m] [0m[32m- None cannot be cast to all types of objects[0m[0m
+[0m[[0minfo[0m] [0m[32m- None can be used with Option instead of null references[0m[0m
+[0m[[0minfo[0m] [0m[32m- Some is the opposite of None for Option types[0m[0m
+[0m[[0minfo[0m] [0m[32m- Option.getOrElse can be used to provide a default in the case of None[0m[0m
+[0m[[0minfo[0m] [0m[32mAboutLists:[0m[0m
+[0m[[0minfo[0m] [0m[32m- Eq tests identity (same object)[0m[0m
+[0m[[0minfo[0m] [0m[32m- == tests equality (same content)[0m[0m
+[0m[[0minfo[0m] [0m[32m- Nil lists are identical, even of different types[0m[0m
+[0m[[0minfo[0m] [0m[32m- Lists are easily created[0m[0m
+[0m[[0minfo[0m] [0m[32m- Lists can be accessed via head and tail[0m[0m
+[0m[[0minfo[0m] [0m[32m- Lists can accessed by position[0m[0m
+[0m[[0minfo[0m] [0m[32m- Lists are immutable[0m[0m
+[0m[[0minfo[0m] [0m[32m- Lists have many useful methods[0m[0m
+[0m[[0minfo[0m] [0m[32m- Functions over lists can use _ as shorthand[0m[0m
+[0m[[0minfo[0m] [0m[32m- Functions over lists can use () instead of {}[0m[0m
+[0m[[0minfo[0m] [0m[32m- Lists can be 'reduced' with a mathematical operation[0m[0m
+[0m[[0minfo[0m] [0m[32m- Foldleft is like reduce, but with an explicit starting value[0m[0m
+[0m[[0minfo[0m] [0m[32m- You can create a list from a range[0m[0m
+[0m[[0minfo[0m] [0m[32m- Lists reuse their tails[0m[0m
+[0m[[0minfo[0m] [0m[32mAboutMaps:[0m[0m
+[0m[[0minfo[0m] [0m[32m- Maps can be created easily[0m[0m
+[0m[[0minfo[0m] [0m[32m- Maps contain distinct pairings[0m[0m
+[0m[[0minfo[0m] [0m[32m- Maps can be added to easily[0m[0m
+[0m[[0minfo[0m] [0m[32m- Map values can be iterated[0m[0m
+[0m[[0minfo[0m] [0m[32m- Maps insertion with duplicate key updates previous entry with subsequent value[0m[0m
+[0m[[0minfo[0m] [0m[32m- Map keys may be of mixed type[0m[0m
+[0m[[0minfo[0m] [0m[32m- Mixed type values can be added to a map [0m[0m
+[0m[[0minfo[0m] [0m[32m- Maps may be accessed[0m[0m
+[0m[[0minfo[0m] [0m[32m- Map elements can be removed easily[0m[0m
+[0m[[0minfo[0m] [0m[32m- Accessing a map by key results in an exception if key is not found[0m[0m
+[0m[[0minfo[0m] [0m[32m- Map elements can be removed in multiple[0m[0m
+[0m[[0minfo[0m] [0m[32m- Map elements can be removed with a tuple[0m[0m
+[0m[[0minfo[0m] [0m[32m- Attempted removal of nonexistent elements from a map is handled gracefully[0m[0m
+[0m[[0minfo[0m] [0m[32m- Map equivalency is independent of order[0m[0m
+[0m[[0minfo[0m] [0m[32mAboutSets:[0m[0m
+[0m[[0minfo[0m] [0m[32m- Sets can be created easily[0m[0m
+[0m[[0minfo[0m] [0m[32m- Sets contain distinct values[0m[0m
+[0m[[0minfo[0m] [0m[32m- Sets can be added to easily[0m[0m
+[0m[[0minfo[0m] [0m[32m- Sets may be of mixed type[0m[0m
+[0m[[0minfo[0m] [0m[32m- Sets can be checked for member existence[0m[0m
+[0m[[0minfo[0m] [0m[32m- Set elements can be removed easily[0m[0m
+[0m[[0minfo[0m] [0m[32m- Set elements can be removed in multiple[0m[0m
+[0m[[0minfo[0m] [0m[32m- Set elements can be removed with a tuple[0m[0m
+[0m[[0minfo[0m] [0m[32m- Attempted removal of nonexistent elements from a set is handled gracefully[0m[0m
+[0m[[0minfo[0m] [0m[32m- Sets can be iterated easily[0m[0m
+[0m[[0minfo[0m] [0m[32m- Two sets can be intersected easily[0m[0m
+[0m[[0minfo[0m] [0m[32m- Two sets can be joined as their union easily[0m[0m
+[0m[[0minfo[0m] [0m[32m- A set is either a subset of another set or it isn't[0m[0m
+[0m[[0minfo[0m] [0m[32m- The difference between two sets can be obtained easily[0m[0m
+[0m[[0minfo[0m] [0m[32m- Set equivalency is independent of order[0m[0m
+[0m[[0minfo[0m] [0m[32mAboutFormatting:[0m[0m
+[0m[[0minfo[0m] [0m[32m- String can be placed in format[0m[0m
+[0m[[0minfo[0m] [0m[32m- Character Literals can be an a single character[0m[0m
+[0m[[0minfo[0m] [0m[32m- Character Literals can be an escape sequence, including octal or hexidecimal[0m[0m
+[0m[[0minfo[0m] [0m[32m- Formatting can also include numbers[0m[0m
+[0m[[0minfo[0m] [0m[32m- Formatting can be used for any number of items, like a string and a number[0m[0m
+[0m[[0minfo[0m] [0m[32mAboutStringInterpolation:[0m[0m
+[0m[[0minfo[0m] [0m[32m- String can be placed in not only in a format method call[0m[0m
+[0m[[0minfo[0m] [0m[32mbut inside a string if you precede the string with an s[0m[0m
+[0m[[0minfo[0m] [0m[32myou can then refer to any value or variable within scope[0m[0m
+[0m[[0minfo[0m] [0m[32mThis is called string interpolation.[0m[0m
+[0m[[0minfo[0m] [0m[32m- String interpolation can include expressions which can[0m[0m
+[0m[[0minfo[0m] [0m[32minclude numbers and strings[0m[0m
+[0m[[0minfo[0m] [0m[32m- If your numbers need special formatting, you can use an[0m[0m
+[0m[[0minfo[0m] [0m[32m`f` prefix before the string instead of an `s`. Once an `f`[0m[0m
+[0m[[0minfo[0m] [0m[32mis placed in front of the string you can apply any printf format rule[0m[0m
+[0m[[0minfo[0m] [0m[32musing a % and the format rule after the variable reference.[0m[0m
+[0m[[0minfo[0m] [0m[32mAboutPatternMatching:[0m[0m
+[0m[[0minfo[0m] [0m[32m- Pattern matching returns something[0m[0m
+[0m[[0minfo[0m] [0m[32m- Pattern matching can return complex somethings[0m[0m
+[0m[[0minfo[0m] [0m[32m- Pattern matching can match complex expressions[0m[0m
+[0m[[0minfo[0m] [0m[32m- Pattern matching can wildcard parts of expressions[0m[0m
+[0m[[0minfo[0m] [0m[32m- Pattern matching can substitute parts of expressions[0m[0m
+[0m[[0minfo[0m] [0m[32m- Pattern matching can done on regular expression groups[0m[0m
+[0m[[0minfo[0m] [0m[32m- A backquote can be used to refer to a stable variable in scope to create a case statement.[0m[0m
+[0m[[0minfo[0m] [0m[32m This prevents what is called \'Variable Shadowing\'[0m[0m
+[0m[[0minfo[0m] [0m[32m- A backquote can be used to refer to a method parameter as a stable variable to create a case statement.[0m[0m
+[0m[[0minfo[0m] [0m[32m- To pattern match against a List, the list can be broken out into parts,[0m[0m
+[0m[[0minfo[0m] [0m[32m in this case the head (x) and the tail(xs). Since the case doesn't terminate in Nil,[0m[0m
+[0m[[0minfo[0m] [0m[32m xs is interpreted as the rest of the list[0m[0m
+[0m[[0minfo[0m] [0m[32m- To obtain the second you can expand on the pattern. Where x is the first element, y[0m[0m
+[0m[[0minfo[0m] [0m[32m is the second element, and xs is the rest. [0m[0m
+[0m[[0minfo[0m] [0m[32m- Same koan as above, but we are pattern matching of a list with only one item![0m[0m
+[0m[[0minfo[0m] [0m[32m- To pattern match against List, you can also establish a pattern match[0m[0m
+[0m[[0minfo[0m] [0m[32m if you know the exact number of elements in a List[0m[0m
+[0m[[0minfo[0m] [0m[32mAboutCaseClasses:[0m[0m
+[0m[[0minfo[0m] [0m[32m- Case classes have an automatic equals method that works[0m[0m
+[0m[[0minfo[0m] [0m[32m- Case classes have an automatic hashcode method that works[0m[0m
+[0m[[0minfo[0m] [0m[32m- Case classes have a convenient way they can be created[0m[0m
+[0m[[0minfo[0m] [0m[32m- Case classes have a convenient toString method defined[0m[0m
+[0m[[0minfo[0m] [0m[32m- Case classes have automatic properties[0m[0m
+[0m[[0minfo[0m] [0m[32m- Case classes can have mutable properties[0m[0m
+[0m[[0minfo[0m] [0m[32m- Safer alternatives exist for altering case classes[0m[0m
+[0m[[0minfo[0m] [0m[32m- Case classes have default and named parameters[0m[0m
+[0m[[0minfo[0m] [0m[32m- Case classes can be disassembled to their constituent parts as a tuple[0m[0m
+[0m[[0minfo[0m] [0m[32mAboutRange:[0m[0m
+[0m[[0minfo[0m] [0m[32m- Range are not inclusive at end of range[0m[0m
+[0m[[0minfo[0m] [0m[32m- Range can specify a step for an increment[0m[0m
+[0m[[0minfo[0m] [0m[32m- Range does not include the last item, even in a step increment[0m[0m
+[0m[[0minfo[0m] [0m[32m- Range can specify to include the last value[0m[0m
+[0m[[0minfo[0m] [0m[32mAboutPartiallyAppliedFunctions:[0m[0m
+[0m[[0minfo[0m] [0m[32m- A partially applied function is a function that you do not apply any or all the[0m[0m
+[0m[[0minfo[0m] [0m[32m arguments, creating another function. This partially applied function[0m[0m
+[0m[[0minfo[0m] [0m[32m doesn't apply any arguments[0m[0m
+[0m[[0minfo[0m] [0m[32m- Partially applied functions can replace any number of arguments[0m[0m
+[0m[[0minfo[0m] [0m[32mAboutPartialFunctions:[0m[0m
+[0m[[0minfo[0m] [0m[32m- A partial function is a trait that when[0m[0m
+[0m[[0minfo[0m] [0m[32m implemented can be used as building blocks to determine[0m[0m
+[0m[[0minfo[0m] [0m[32m a solution.  The trait PartialFunction requires that the[0m[0m
+[0m[[0minfo[0m] [0m[32m the method isDefinedAt and apply be implemented.[0m[0m
+[0m[[0minfo[0m] [0m[32m- Case statements are a quick way to create partial functions. When you create a case[0m[0m
+[0m[[0minfo[0m] [0m[32m statement, the apply and isDefinedAt is created for you.[0m[0m
+[0m[[0minfo[0m] [0m[32m- The result of partial functions can have an \'andThen\' function added to the end[0m[0m
+[0m[[0minfo[0m] [0m[32m of the chain[0m[0m
+[0m[[0minfo[0m] [0m[32m- The result of partial functions can have an \'andThen\' function added to the end[0m[0m
+[0m[[0minfo[0m] [0m[32m of the chain used to continue onto another chain of logic[0m[0m
+[0m[[0minfo[0m] [0m[32mAboutImplicits:[0m[0m
+[0m[[0minfo[0m] [0m[32m- Implicits wrap around existing classes to provide extra functionality[0m[0m
+[0m[[0minfo[0m] [0m[32m   This is similar to \'monkey patching\' in Ruby, and Meta-Programming in Groovy.[0m[0m
+[0m[[0minfo[0m] [0m[32m   Creating a method isOdd for Int, which doesn't exist[0m[0m
+[0m[[0minfo[0m] [0m[32m- Implicits rules can be imported into your scope with an import[0m[0m
+[0m[[0minfo[0m] [0m[32m- Implicits can be used to automatically convert one type to another[0m[0m
+[0m[[0minfo[0m] [0m[32m- Implicits can be used declare a value to be provided as a default as[0m[0m
+[0m[[0minfo[0m] [0m[32m   long as an implicit value is set with in the scope.  These are[0m[0m
+[0m[[0minfo[0m] [0m[32m   called implicit function parameters[0m[0m
+[0m[[0minfo[0m] [0m[32m- Implicit Function Parameters can contain a list of implicits[0m[0m
+[0m[[0minfo[0m] [0m[32m- Default arguments though are preferred to Implicit Function Parameters[0m[0m
+[0m[[0minfo[0m] [0m[32mAboutTraits:[0m[0m
+[0m[[0minfo[0m] [0m[32m- A class uses the extends keyword to mixin a trait if it is the only relationship the class inherits[0m[0m
+[0m[[0minfo[0m] [0m[32m- A class can only 'extend' from one class or trait, any subsequent extension should use the keyword 'with'[0m[0m
+[0m[[0minfo[0m] [0m[32m- Traits are polymorphic. Any type can be referred to by another type if related by extension[0m[0m
+[0m[[0minfo[0m] [0m[32m- Traits can have concrete implementations that can be mixed into concrete classes with it's own state[0m[0m
+[0m[[0minfo[0m] [0m[32m- Traits can also be mixed during instantiation after the fact![0m[0m
+[0m[[0minfo[0m] [0m[32m This is useful if you only want to mixin per instance and not per class[0m[0m
+[0m[[0minfo[0m] [0m[32m- Traits are stackable and can change the behavior of methods that the traits are stacked upon[0m[0m
+[0m[[0minfo[0m] [0m[32m- Just like other traits, stackable traits can be mixed after the fact[0m[0m
+[0m[[0minfo[0m] [0m[32m- More traits can be stacked one atop another, make sure that all overrides[0m[0m
+[0m[[0minfo[0m] [0m[32m are labelled, abstract override.  The order of the mixins are important.[0m[0m
+[0m[[0minfo[0m] [0m[32m Traits on the right take effect first.[0m[0m
+[0m[[0minfo[0m] [0m[32m- Same koans as before except that we swapped the order of the traits[0m[0m
+[0m[[0minfo[0m] [0m[32m- Using three traits to enhance the IntQueue: Doubling, Incrementing, and Filtering![0m[0m
+[0m[[0minfo[0m] [0m[32m- Traits are instantiated before a the mixed-in class instantiation[0m[0m
+[0m[[0minfo[0m] [0m[32m- Traits are instantiated before a classes instantiation from left to right[0m[0m
+[0m[[0minfo[0m] [0m[32m- Instantiations are tracked internally and will not allow a duplicate instantiation. Note T1 extends T2, and C1 also extends T2, but T2 is only instantiated once.[0m[0m
+[0m[[0minfo[0m] [0m[32m- The diamond of death (http://en.wikipedia.org/wiki/Diamond_problem) is avoided since instantiations are tracked and will not allow multiple instantiations[0m[0m
+[0m[[0minfo[0m] [0m[32mAboutForExpressions:[0m[0m
+[0m[[0minfo[0m] [0m[32m- For loops can be simple[0m[0m
+[0m[[0minfo[0m] [0m[32m- For loops can contain additional logic[0m[0m
+[0m[[0minfo[0m] [0m[32m- For expressions can nest, with later generators varying more rapidly than earlier ones[0m[0m
+[0m[[0minfo[0m] [0m[32mAboutInfixPrefixAndPostfixOperators:[0m[0m
+[0m[[0minfo[0m] [0m[32m- Simple: Infix Operators are available if an object[0m[0m
+[0m[[0minfo[0m] [0m[32m  has a method that takes one parameter.[0m[0m
+[0m[[0minfo[0m] [0m[32m- Infix Operators do NOT work if an object[0m[0m
+[0m[[0minfo[0m] [0m[32m  has a method that takes two parameters.[0m[0m
+[0m[[0minfo[0m] [0m[32m- Postfix operators work if an object[0m[0m
+[0m[[0minfo[0m] [0m[32m  has a method that takes no parameters.[0m[0m
+[0m[[0minfo[0m] [0m[32m- Prefix operators work if an object[0m[0m
+[0m[[0minfo[0m] [0m[32m  has a method name that starts with unary_ .[0m[0m
+[0m[[0minfo[0m] [0m[32m- Here we create our own prefix operator for our own class.[0m[0m
+[0m[[0minfo[0m] [0m[32m   The only identifiers that can be used as prefix operators[0m[0m
+[0m[[0minfo[0m] [0m[32m   are +, -, !, and ~[0m[0m
+[0m[[0minfo[0m] [0m[32mAboutInfixTypes:[0m[0m
+[0m[[0minfo[0m] [0m[32m- We can make a type infix, meaning that the type can be displayed in complement[0m[0m
+[0m[[0minfo[0m] [0m[32m           between two types in order to make a readable delaration[0m[0m
+[0m[[0minfo[0m] [0m[32m- Of course we can make this a bit more elegant by creating an infix operator[0m[0m
+[0m[[0minfo[0m] [0m[32m  method to use with our infix type[0m[0m
+[0m[[0minfo[0m] [0m[32mAboutMutableMaps:[0m[0m
+[0m[[0minfo[0m] [0m[32m- Mutable maps can be created easily[0m[0m
+[0m[[0minfo[0m] [0m[32m- Mutable maps can have elements removed[0m[0m
+[0m[[0minfo[0m] [0m[32m- Mutable maps can have tuples of elements removed[0m[0m
+[0m[[0minfo[0m] [0m[32m- Mutable maps can have tuples of elements added[0m[0m
+[0m[[0minfo[0m] [0m[32m- Mutable maps can have Lists of elements added[0m[0m
+[0m[[0minfo[0m] [0m[32m- Mutable maps can have Lists of elements removed[0m[0m
+[0m[[0minfo[0m] [0m[32m- Mutable maps can be cleared[0m[0m
+[0m[[0minfo[0m] [0m[32mAboutMutableSets:[0m[0m
+[0m[[0minfo[0m] [0m[32m- Mutable sets can be created easily[0m[0m
+[0m[[0minfo[0m] [0m[32m- Mutable sets can have elements removed[0m[0m
+[0m[[0minfo[0m] [0m[32m- Mutable sets can have tuples of elements removed[0m[0m
+[0m[[0minfo[0m] [0m[32m- Mutable sets can have tuples of elements added[0m[0m
+[0m[[0minfo[0m] [0m[32m- Mutable sets can have Lists of elements added[0m[0m
+[0m[[0minfo[0m] [0m[32m- Mutable sets can have Lists of elements removed[0m[0m
+[0m[[0minfo[0m] [0m[32m- Mutable sets can be cleared[0m[0m
+[0m[[0minfo[0m] [0m[32mAboutSequencesAndArrays:[0m[0m
+[0m[[0minfo[0m] [0m[32m- A list can be converted to an array[0m[0m
+[0m[[0minfo[0m] [0m[32m- Any sequence can be converted to a list[0m[0m
+[0m[[0minfo[0m] [0m[32m- You can create a sequence from a for comprehension[0m[0m
+[0m[[0minfo[0m] [0m[32m- You can create a sequence from a for comprehension with a condition[0m[0m
+[0m[[0minfo[0m] [0m[32m- You can filter any sequence based on a predicate[0m[0m
+[0m[[0minfo[0m] [0m[32m- You can also filter Arrays in the same way[0m[0m
+[0m[[0minfo[0m] [0m[32m- You can map values in a sequence through a function[0m[0m
+[0m[[0minfo[0m] [0m[32mAboutIterables:[0m[0m
+[0m[[0minfo[0m] [0m[32m- Iterable is a trait that has the ability to return an iterator of itself.[0m[0m
+[0m[[0minfo[0m] [0m[32m Some known iterators are Sets, Lists, Vectors, Stacks, and Streams. Iterator has two[0m[0m
+[0m[[0minfo[0m] [0m[32m important methods:  `hasNext`, which answers whether the iterator has another element[0m[0m
+[0m[[0minfo[0m] [0m[32m available. `next` which will return the next element in the iterator.[0m[0m
+[0m[[0minfo[0m] [0m[32m- `grouped` will return an fixed sized Iterable chucks of an Iterable[0m[0m
+[0m[[0minfo[0m] [0m[32m- `sliding` will return an Iterable that shows a sliding window of an Iterable.[0m[0m
+[0m[[0minfo[0m] [0m[32m- `sliding` can take the size of the window as well the size of the step during each[0m[0m
+[0m[[0minfo[0m] [0m[32m iteration[0m[0m
+[0m[[0minfo[0m] [0m[32m- `takeRight` is the opposite of 'take' in Traversable.  It retrieves the last elements[0m[0m
+[0m[[0minfo[0m] [0m[32m of an Iterable. [0m[0m
+[0m[[0minfo[0m] [0m[32m- `dropRight` will drop the number of elements from the right. [0m[0m
+[0m[[0minfo[0m] [0m[32m- `zip` will stitch two iterables into an iterable of pairs of corresponding elements[0m[0m
+[0m[[0minfo[0m] [0m[32m  from both iterables. e.g. Iterable(x1, x2, x3) zip Iterable(y1, y2, y3) will[0m[0m
+[0m[[0minfo[0m] [0m[32m  return ((x1,y1), (x2, y2), (x3, y3))[0m[0m
+[0m[[0minfo[0m] [0m[32m- if two Iterables aren't the same size, then `zip` will only zip what can only be paired.[0m[0m
+[0m[[0minfo[0m] [0m[32m  e.g. Iterable(x1, x2, x3) zip Iterable(y1, y2) will[0m[0m
+[0m[[0minfo[0m] [0m[32m  return ((x1,y1), (x2, y2))[0m[0m
+[0m[[0minfo[0m] [0m[32m- if two Iterables aren't the same size, then `zipAll` can provide fillers for what it couldn't[0m[0m
+[0m[[0minfo[0m] [0m[32m  find a complement for. e.g. Iterable(x1, x2, x3) zipAll (Iterable(y1, y2), x, y) will[0m[0m
+[0m[[0minfo[0m] [0m[32m  return ((x1,y1), (x2, y2, y))[0m[0m
+[0m[[0minfo[0m] [0m[32m- `zipWithIndex` will zip an Iterable with it's integer index[0m[0m
+[0m[[0minfo[0m] [0m[32m- `sameElements` will return true if the two iterables have the same number of elements[0m[0m
+[0m[[0minfo[0m] [0m[32mAboutTraversables:[0m[0m
+[0m[[0minfo[0m] [0m[32m- Traverables are the superclass of Lists, Arrays, Maps, Sets, Streams, and more.[0m[0m
+[0m[[0minfo[0m] [0m[32m   The methods involved can be applied to each other in a different type.  ++ appends[0m[0m
+[0m[[0minfo[0m] [0m[32m   two Traversables together.[0m[0m
+[0m[[0minfo[0m] [0m[32m- map will apply the given function on all elements of a[0m[0m
+[0m[[0minfo[0m] [0m[32m  Traversable and return a new collection of the result.[0m[0m
+[0m[[0minfo[0m] [0m[32m- flatten will smash all child Traversables within a Traversable[0m[0m
+[0m[[0minfo[0m] [0m[32m- flatMap will not only apply the given function on all elements of a Traversable,[0m[0m
+[0m[[0minfo[0m] [0m[32m  but all elements within the elements and flatten the results[0m[0m
+[0m[[0minfo[0m] [0m[32m- flatMap of Options will filter out all Nones and Keep the Somes[0m[0m
+[0m[[0minfo[0m] [0m[32m- collect will apply a partial function to all elements of a Traversable[0m[0m
+[0m[[0minfo[0m] [0m[32m          and will return a different collection. In this koan, a case fragment is a partial function.[0m[0m
+[0m[[0minfo[0m] [0m[32m- collect will apply a partial function to all elements of a Traversable[0m[0m
+[0m[[0minfo[0m] [0m[32m  and will return a different collection. In this koan, two case fragments are chained to create[0m[0m
+[0m[[0minfo[0m] [0m[32m  a more robust result.[0m[0m
+[0m[[0minfo[0m] [0m[32m- foreach will apply a function to all elements of a Traversable, but unlike[0m[0m
+[0m[[0minfo[0m] [0m[32m the map function, it will not return anything since the return type is Unit, which[0m[0m
+[0m[[0minfo[0m] [0m[32m is like a void return type in Java, C++[0m[0m
+[0m[[0minfo[0m] [0m[32m- toArray will convert any Traversable to an Array, which is a special wrapper around a[0m[0m
+[0m[[0minfo[0m] [0m[32m  primitive Java array.[0m[0m
+[0m[[0minfo[0m] [0m[32m- toList will convert any Traversable to a List.[0m[0m
+[0m[[0minfo[0m] [0m[32m- toList, as well as other conversion methods like toSet, toArray,[0m[0m
+[0m[[0minfo[0m] [0m[32m  will not convert if the collection type is the same.[0m[0m
+[0m[[0minfo[0m] [0m[32m- toIterable will convert any Traversable to an Iterable. This is a base[0m[0m
+[0m[[0minfo[0m] [0m[32m  trait for all Scala collections that define an iterator method to step[0m[0m
+[0m[[0minfo[0m] [0m[32m  through one-by-one the collection's elements.[0m[0m
+[0m[[0minfo[0m] [0m[32m  (see AboutIterable koan).[0m[0m
+[0m[[0minfo[0m] [0m[32m- toSeq will convert any Traversable to a Seq which is an ordered Iterable[0m[0m
+[0m[[0minfo[0m] [0m[32m  and is the superclass to List, Queues, and Vectors. Sequences provide[0m[0m
+[0m[[0minfo[0m] [0m[32m  a method apply for indexing. Indices range from 0 up the the[0m[0m
+[0m[[0minfo[0m] [0m[32m  length of a sequence.[0m[0m
+[0m[[0minfo[0m] [0m[32m- toIndexedSeq will convert any Traversable to an IndexedSeq which is[0m[0m
+[0m[[0minfo[0m] [0m[32m  an indexed sequence used in[0m[0m
+[0m[[0minfo[0m] [0m[32m  Vectors and Strings[0m[0m
+[0m[[0minfo[0m] [0m[32m- toStream will convert any Traversable to a Stream which is[0m[0m
+[0m[[0minfo[0m] [0m[32m  a lazy list where elements are evaluated as they[0m[0m
+[0m[[0minfo[0m] [0m[32m  are needed.[0m[0m
+[0m[[0minfo[0m] [0m[32m- toSet will convert any Traversable to a Set which is[0m[0m
+[0m[[0minfo[0m] [0m[32m  a collection of unordered, unique values[0m[0m
+[0m[[0minfo[0m] [0m[32m- toMap will convert any Traversable to a Map. How it's[0m[0m
+[0m[[0minfo[0m] [0m[32m used depends on the original collection; if it's a List or Seq,[0m[0m
+[0m[[0minfo[0m] [0m[32m it should be of parameterized type Tuple2.[0m[0m
+[0m[[0minfo[0m] [0m[32m- toMap will convert a Set to a Map,[0m[0m
+[0m[[0minfo[0m] [0m[32m it should be of parameterized type Tuple2.[0m[0m
+[0m[[0minfo[0m] [0m[32m- isEmpty is pretty self evident[0m[0m
+[0m[[0minfo[0m] [0m[32m- nonEmpty is pretty self evident too[0m[0m
+[0m[[0minfo[0m] [0m[32m- size provides the size of the traversable[0m[0m
+[0m[[0minfo[0m] [0m[32m- hasDefiniteSize will return true if there is traversable that has a[0m[0m
+[0m[[0minfo[0m] [0m[32m          finite end, otherwise false[0m[0m
+[0m[[0minfo[0m] [0m[32m- head will return the first element of an ordered collection, or some random[0m[0m
+[0m[[0minfo[0m] [0m[32m element if order is not defined like in a Set or Map[0m[0m
+[0m[[0minfo[0m] [0m[32m- headOption will return the first element as an Option of an order collection,[0m[0m
+[0m[[0minfo[0m] [0m[32m or some random element if order is not defined.  If a first element[0m[0m
+[0m[[0minfo[0m] [0m[32m is not available, then None is returned[0m[0m
+[0m[[0minfo[0m] [0m[32m- last will return the last element of an ordered collection, or some random[0m[0m
+[0m[[0minfo[0m] [0m[32m element if order is not defined like in a Set or Map[0m[0m
+[0m[[0minfo[0m] [0m[32m- lastOption will return the first element as an Option of an order collection,[0m[0m
+[0m[[0minfo[0m] [0m[32m or some random element if order is not defined.  If a first element[0m[0m
+[0m[[0minfo[0m] [0m[32m is not available, then None is returned[0m[0m
+[0m[[0minfo[0m] [0m[32m- find will locate the first item that matches a predicate p as Some or None if[0m[0m
+[0m[[0minfo[0m] [0m[32m an element is not found[0m[0m
+[0m[[0minfo[0m] [0m[32m- tail will return the rest of the collection without the head[0m[0m
+[0m[[0minfo[0m] [0m[32m- init will return the rest of the collection without the last[0m[0m
+[0m[[0minfo[0m] [0m[32m- Given a `from` index, and a `to` index, slice will return the part of the[0m[0m
+[0m[[0minfo[0m] [0m[32m  collection including `from`, and excluding `to`[0m[0m
+[0m[[0minfo[0m] [0m[32m- Take will return the the first number of elements given.[0m[0m
+[0m[[0minfo[0m] [0m[32m- Take is used often with Streams, and Streams after all are Traversable[0m[0m
+[0m[[0minfo[0m] [0m[32m- Drop will take the rest of the Traversable except[0m[0m
+[0m[[0minfo[0m] [0m[32m  the number of elements given[0m[0m
+[0m[[0minfo[0m] [0m[32m- takeWhile will continually accumulate elements until a predicate[0m[0m
+[0m[[0minfo[0m] [0m[32m  is no longer satisfied.  In this koan, TreeSet is Traversable.[0m[0m
+[0m[[0minfo[0m] [0m[32m  TreeSet also is also sorted.[0m[0m
+[0m[[0minfo[0m] [0m[32m- dropWhile will continually drop elements until a predicate[0m[0m
+[0m[[0minfo[0m] [0m[32m  is no longer satisfied.  Again, TreeSet is Traversable.[0m[0m
+[0m[[0minfo[0m] [0m[32m  TreeSet also is also sorted.[0m[0m
+[0m[[0minfo[0m] [0m[32m- filter will take out all elements that don't satisfy a predicate. An[0m[0m
+[0m[[0minfo[0m] [0m[32m  Array is also Traversable.[0m[0m
+[0m[[0minfo[0m] [0m[32m- filterNot will take out all elements that satisfy a predicate. An[0m[0m
+[0m[[0minfo[0m] [0m[32m  Array is also Traversable.[0m[0m
+[0m[[0minfo[0m] [0m[32m- splitAt will split a Traversable at a position, returning a 2 product[0m[0m
+[0m[[0minfo[0m] [0m[32m  Tuple.  Array is Traversable. splitAt is also defined as[0m[0m
+[0m[[0minfo[0m] [0m[32m  (xs take n, xs drop n)[0m[0m
+[0m[[0minfo[0m] [0m[32m- span will split a Traversable according to predicate, returning[0m[0m
+[0m[[0minfo[0m] [0m[32m  a 2 product Tuple.  Array is Traversable, span[0m[0m
+[0m[[0minfo[0m] [0m[32m  is also defined as (xs takeWhile p, xs dropWhile p)[0m[0m
+[0m[[0minfo[0m] [0m[32m- partition will split a Traversable according to predicate, return[0m[0m
+[0m[[0minfo[0m] [0m[32m  a 2 product Tuple. The left side are the elements satisfied by[0m[0m
+[0m[[0minfo[0m] [0m[32m  the predicate, the right side is not. Array is Traversable,[0m[0m
+[0m[[0minfo[0m] [0m[32m  partition is also defined as (xs filter p, xs filterNot p)[0m[0m
+[0m[[0minfo[0m] [0m[32m- groupBy will categorize a Traversable according to function, and return[0m[0m
+[0m[[0minfo[0m] [0m[32m          a map with the results.  This koan uses Partial Function chaining.  If you are[0m[0m
+[0m[[0minfo[0m] [0m[32m          still unfamiliar with PartialFunctions, see AboutPartialFunctions koans.[0m[0m
+[0m[[0minfo[0m] [0m[32m- forall will determine if a predicate is valid for all members of a[0m[0m
+[0m[[0minfo[0m] [0m[32m  Traversable.[0m[0m
+[0m[[0minfo[0m] [0m[32m- `exists` will determine if a predicate[0m[0m
+[0m[[0minfo[0m] [0m[32m is valid for some members of a Traversable.[0m[0m
+[0m[[0minfo[0m] [0m[32m- `count` will count the number of elements that satisfy a predicate[0m[0m
+[0m[[0minfo[0m] [0m[32m in a Traversable.[0m[0m
+[0m[[0minfo[0m] [0m[32m-  `/:` or `foldLeft` will combine an operation starting with a seed and combining from the left.  Fold Left[0m[0m
+[0m[[0minfo[0m] [0m[32m is defined as (seed /: list), where seed is the initial value.  Once the fold is established, you[0m[0m
+[0m[[0minfo[0m] [0m[32m provide a function that takes two arguments.  The first argument is the running total of the operation,[0m[0m
+[0m[[0minfo[0m] [0m[32m and the second element is the next element of the list.[0m[0m
+[0m[[0minfo[0m] [0m[32m[0m[0m
+[0m[[0minfo[0m] [0m[32m Given a Traversable (x1, x2, x3, x4), an initial value of init, an operation op,[0m[0m
+[0m[[0minfo[0m] [0m[32m foldLeft is defined as: (((init op x1) op x2) op x3) op x4)[0m[0m
+[0m[[0minfo[0m] [0m[32m-  `:\` or foldRight` will combine an operation starting with a seed and combining from the right.  Fold right[0m[0m
+[0m[[0minfo[0m] [0m[32m is defined as (list :\ seed), where seed is the initial value.  Once the fold is established, you[0m[0m
+[0m[[0minfo[0m] [0m[32m provide a function that takes two elements.  The first is the next element of the list, and the[0m[0m
+[0m[[0minfo[0m] [0m[32m second element is the running total of the operation.[0m[0m
+[0m[[0minfo[0m] [0m[32m[0m[0m
+[0m[[0minfo[0m] [0m[32m Given a Traversable (x1, x2, x3, x4), an initial value of init, an operation op,[0m[0m
+[0m[[0minfo[0m] [0m[32m foldRight is defined as: x1 op (x2 op (x3 op (x4 op init)))[0m[0m
+[0m[[0minfo[0m] [0m[32m- `reduceLeft` is the similar to foldLeft, except that the seed is the head value[0m[0m
+[0m[[0minfo[0m] [0m[32m- `reduceRight` is the similar to foldRight, except that the seed is the last value[0m[0m
+[0m[[0minfo[0m] [0m[32m- There are some methods that take much of the folding work out by providing basic functionality.[0m[0m
+[0m[[0minfo[0m] [0m[32m  `sum` will add all the elements, product will multiply, min would determine the smallest element, and[0m[0m
+[0m[[0minfo[0m] [0m[32m  `max` the largest.[0m[0m
+[0m[[0minfo[0m] [0m[32m- You would choose foldLeft/reduceLeft or foldRight/reduceRight based on your mathematical goal.[0m[0m
+[0m[[0minfo[0m] [0m[32m One other reason for deciding is performance.  foldLeft is more performant since it uses[0m[0m
+[0m[[0minfo[0m] [0m[32m tail recursion and is optimized. This koan will either work or you will receive a[0m[0m
+[0m[[0minfo[0m] [0m[32m StackOverflowError. If you do receive a StackOverflowError, try reducing the MAX_SIZE value.[0m[0m
+[0m[[0minfo[0m] [0m[32m- `transpose` will take a traversable of traversables and group them by their position in[0m[0m
+[0m[[0minfo[0m] [0m[32m  it's own traversable.  E.g. ((x1, x2),(y1, y2)).transpose = (x1, y1), (x2, y2).[0m[0m
+[0m[[0minfo[0m] [0m[32m  or ((x1, x2, x3),(y1, y2, y3),(z1, z2, z3)).transpose = ((x1, y1, z1), (x2, y2, z2), (x3, y3, z3))[0m[0m
+[0m[[0minfo[0m] [0m[32m- `mkString` will format a Traversable using a given string as the delimiter.[0m[0m
+[0m[[0minfo[0m] [0m[32m- `mkString` will also take a beginning and ending string to surround the list.[0m[0m
+[0m[[0minfo[0m] [0m[32m- `addString` will take a StringBuilder to add the contents of list into the builder.[0m[0m
+[0m[[0minfo[0m] [0m[32m- Traversables can have views which allow you to efficiently do compound work.[0m[0m
+[0m[[0minfo[0m] [0m[32m- Views can also accept a `to` and `from` value which takes a subset and performs your view[0m[0m
+[0m[[0minfo[0m] [0m[32m  functions on the subset.[0m[0m
+[0m[[0minfo[0m] [0m[32mAboutNamedAndDefaultArguments:[0m[0m
+[0m[[0minfo[0m] [0m[32m- can specify arguments in any order if you use their names[0m[0m
+[0m[[0minfo[0m] [0m[32m- can default arguments if you leave them off[0m[0m
+[0m[[0minfo[0m] [0m[32m- can access class parameters and specify arguments in any order if you use their names[0m[0m
+[0m[[0minfo[0m] [0m[32m- can access class parameters and default arguments if you leave them off[0m[0m
+[0m[[0minfo[0m] [0m[32m- can default class parameters and have default arguments too[0m[0m
+[0m[[0minfo[0m] [0m[32m- default parameters can be functional too[0m[0m
+[0m[[0minfo[0m] [0m[32mAboutTypeTags:[0m[0m
+[0m[[0minfo[0m] [0m[32m- TypeTags can be used to determine a type used[0m[0m
+[0m[[0minfo[0m] [0m[32m   before it erased by the VM by using an implicit TypeTag argument.[0m[0m
+[0m[[0minfo[0m] [0m[32m- TypeTags can also be [0m[0m
+[0m[[0minfo[0m] [0m[32m- TypeTags can be attached to classes. TypeTags have other meta-information about[0m[0m
+[0m[[0minfo[0m] [0m[32m  the type erased[0m[0m
+[0m[[0minfo[0m] [0m[32mAboutPreconditions:[0m[0m
+[0m[[0minfo[0m] [0m[32m- On precondition violation, intercept expects type of exception thrown[0m[0m
+[0m[[0minfo[0m] [0m[32mAboutExtractors:[0m[0m
+[0m[[0minfo[0m] [0m[32m- When you create a case class, it automatically can be used with pattern matching since it has an extractor[0m[0m
+[0m[[0minfo[0m] [0m[32m- What's an extractor? In Scala it's a method in any `object` called `unapply`, and that method[0m[0m
+[0m[[0minfo[0m] [0m[32m is used to disassemble the object given by returning a tuple wrapped in an option. Extractors can be used[0m[0m
+[0m[[0minfo[0m] [0m[32m to assign values.[0m[0m
+[0m[[0minfo[0m] [0m[32m- Of course an extractor can be used in pattern matching...[0m[0m
+[0m[[0minfo[0m] [0m[32m- Since we aren't really using u and v in the previous pattern matching with can replace them with _.[0m[0m
+[0m[[0minfo[0m] [0m[32m- As long as the method signatures aren't the same, you can have an many unapply methods as you want[0m[0m
+[0m[[0minfo[0m] [0m[32m- An extractor can be any stable object, including instantiated classes with an unapply method.[0m[0m
+[0m[[0minfo[0m] [0m[32m- What is typical is to create a custom extractor in the companion object of the class.[0m[0m
+[0m[[0minfo[0m] [0m[32m In this koan, we use it as an assignment[0m[0m
+[0m[[0minfo[0m] [0m[32m- In this koan we use the unapply for pattern matching employee objects[0m[0m
+[0m[[0minfo[0m] [0m[32mAboutByNameParameter:[0m[0m
+[0m[[0minfo[0m] [0m[32m- () => Int is a Function type that takes a Unit type. Unit is known as 'void' to a Java programmer. The function[0m[0m
+[0m[[0minfo[0m] [0m[32m and returns an Int. You can place this as a method parameter so that you can you use it as a block, but still[0m[0m
+[0m[[0minfo[0m] [0m[32m it doesn't look quite right.[0m[0m
+[0m[[0minfo[0m] [0m[32m- A by-name parameter does the same thing as a previous koan but there is no need to explicitly[0m[0m
+[0m[[0minfo[0m] [0m[32m handle Unit or (). This is used extensively in scala to create blocks.[0m[0m
+[0m[[0minfo[0m] [0m[32m- By name parameters can also be used with an Object and apply to make interesting block-like calls[0m[0m
+[0m[[0minfo[0m] [0m[32mAboutRepeatedParameters:[0m[0m
+[0m[[0minfo[0m] [0m[32m- A repeated parameter must be the last parameter and this will[0m[0m
+[0m[[0minfo[0m] [0m[32m let you add as many extra parameters as needed[0m[0m
+[0m[[0minfo[0m] [0m[32m- A repeated parameter can accept a collection as the last parameter but will be considered a single object[0m[0m
+[0m[[0minfo[0m] [0m[32m- A repeated parameter can accept a collection,and if you want it expanded, add :_*[0m[0m
+[0m[[0minfo[0m] [0m[32mAboutTypeSignatures:[0m[0m
+[0m[[0minfo[0m] [0m[32m- In Java you declare a generic type within a <>, in Scala it is [][0m[0m
+[0m[[0minfo[0m] [0m[32m- Most of the time, Scala will infer the type and [] are optional[0m[0m
+[0m[[0minfo[0m] [0m[32m- A trait can be declared containing a type, where a concrete implementer will satisfy the type[0m[0m
+[0m[[0minfo[0m] [0m[32m- Class meta-information can be retrieved by class name by using classOf[className][0m[0m
+[0m[[0minfo[0m] [0m[32m- Class meta-information can be derived from an object reference using getClass()[0m[0m
+[0m[[0minfo[0m] [0m[32m- isInstanceOf[className] is used to determine the if an object reference is an instance of given class[0m[0m
+[0m[[0minfo[0m] [0m[32m- asInstanceOf[className] is used to cast one reference to another[0m[0m
+[0m[[0minfo[0m] [0m[32m- asInstanceOf[className] will throw a ClassCastException if a class derived from and the class target aren't from the same inheritance branch[0m[0m
+[0m[[0minfo[0m] [0m[32m- null.asInstanceOf[className] can be used to generate basic default values[0m[0m
+[0m[[0minfo[0m] [0m[32mAboutTypeVariance:[0m[0m
+[0m[[0minfo[0m] [0m[32m- Using type inference the type that you instantiate it will be the val or var reference type[0m[0m
+[0m[[0minfo[0m] [0m[32m- You can explicitly declare the type variable of the object during instantiation[0m[0m
+[0m[[0minfo[0m] [0m[32m- You can coerece your object to a type.[0m[0m
+[0m[[0minfo[0m] [0m[32m- variable type must match assigned type[0m[0m
+[0m[[0minfo[0m] [0m[32m- covariance lets you specify the container of that type or parent type[0m[0m
+[0m[[0minfo[0m] [0m[32m- mutating an object is not allowed with covariance[0m[0m
+[0m[[0minfo[0m] [0m[32m- contravariance is the opposite of covariance[0m[0m
+[0m[[0minfo[0m] [0m[32m- A reference to a parent type means you cannot anticipate getting a more specific type[0m[0m
+[0m[[0minfo[0m] [0m[32m- invariance means you need to specify the type exactly[0m[0m
+[0m[[0minfo[0m] [0m[32m- Declaring a type as invariant also means that you can both mutate and access elements from an object of generic type[0m[0m
+[0m[[0minfo[0m] [0m[32mAboutEnumerations:[0m[0m
+[0m[[0minfo[0m] [0m[32m- Value assigns a numerical value to fields[0m[0m
+[0m[[0minfo[0m] [0m[32m- Enumerations can set their own index and name[0m[0m
+[0m[[0minfo[0m] [0m[32m- Enumeration declarations can be done on one line[0m[0m
+[0m[[0minfo[0m] [0m[32m- Enumerations can be declared with a string value only[0m[0m
+[0m[[0minfo[0m] [0m[32m- You can extend the Enumeration by extending the Val class.[0m[0m
